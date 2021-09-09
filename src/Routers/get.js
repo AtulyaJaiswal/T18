@@ -3,6 +3,7 @@ const router = express.Router();
 const Students = require('../Models/student');
 const Teachers = require('../Models/teacher');
 
+//USE THIS TO GET LIST OF ALL TEACHERS
 router.get('/listOfAllTeachers', async (req, res) => {
 
     try {
@@ -15,6 +16,7 @@ router.get('/listOfAllTeachers', async (req, res) => {
 
 });
 
+//USE THIS TO GET LIST OF ALL STUDENTS
 router.get('/listOfAllStudents', async (req, res) => {
 
     try {
@@ -27,6 +29,7 @@ router.get('/listOfAllStudents', async (req, res) => {
 
 });
 
+//LIST OF TEACHERS SORTED BY SUBJECT
 router.get('/listOfTeachers', async (req, res) => {
 
     const { subject } = req.body;
@@ -41,6 +44,7 @@ router.get('/listOfTeachers', async (req, res) => {
 
 });
 
+//LIST OF STUDENTS SORTED BY CLASS AND SECTION
 router.get('/listOfStudents', async (req, res) => {
 
     const { classes, section } = req.body;
@@ -66,6 +70,7 @@ router.get('/listOfStudents', async (req, res) => {
     }
 });
 
+//LIST OF STUDENTS SORTED BY ASSIGNED TEACHER
 router.get('/listOfStudentsByTeacher', async (req,res) => {
 
     const{assignedTeacher} = req.body;
