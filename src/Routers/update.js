@@ -4,6 +4,8 @@ const Students = require('../Models/student');
 
 //If we allow a student to edit their profile after logging in then we 
 //can do that more easily by JSONWEBTOKEN  by storing cookies
+
+//HERE WE ARE DOING BY GETTING STUDENTS BY THEIR NAME AND THEN UPDATING THE DESIRED DATA
 router.put('/updateStudentData', async (req, res) => {
     const { name, email, classes, section, assignedTeacher } = req.body;
 
