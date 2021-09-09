@@ -3,6 +3,30 @@ const router = express.Router();
 const Students = require('../Models/student');
 const Teachers = require('../Models/teacher');
 
+router.get('/listOfAllTeachers', async (req, res) => {
+
+    try {
+        Teachers.find()
+            .then((list) => res.json(list))
+            .catch((err) => res.status(400).json(`Error: ${err}`));
+    } catch (error) {
+        console.log(error);
+    }
+
+});
+
+router.get('/listOfAllStudents', async (req, res) => {
+
+    try {
+        Students.find()
+            .then((list) => res.json(list))
+            .catch((err) => res.status(400).json(`Error: ${err}`));
+    } catch (error) {
+        console.log(error);
+    }
+
+});
+
 router.get('/listOfTeachers', async (req, res) => {
 
     const { subject } = req.body;
